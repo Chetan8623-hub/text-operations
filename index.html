@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="text.png" type="png">
+    <title>String Operation</title>
+    <style>
+        body{
+            background-color: #dcdcf0;
+            margin: 0;
+            padding: 0;
+        }
+        .text-center{
+            text-align: center;
+        }
+        .text-box{
+            border: double;
+            width: 50%;
+            display: block;
+            margin: 7px auto;
+            padding: 10px;
+            border-radius: 5px;
+            height: 150px;
+        }
+        .action-container{
+            width: 54%;
+            display: flex;
+            justify-content: space-evenly;
+            margin: 5px auto;
+            flex-wrap: wrap;
+        }
+        .btn-action{
+            border: 2px dotted;
+            width: 150px;
+            padding: 8px 15px;
+            font-size: 15px;
+            border-radius: 15px;
+            background-color: rgb(4, 97, 97);
+            color: white;
+            cursor: pointer;
+            margin: 5PX;
+        }
+        .btn-action:hover{
+            transition: 0.50s;
+            background-color: rgb(2, 32, 32);
+            border-radius: 30px;
+            box-shadow: 2px 2px 15px 1px rgb(15, 36, 223) ;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: 2em;
+}
+/* Mobile screen */
+            @media scre and ( max-width: 500px ){
+            .page-heading{
+            font-size: 35px;
+            }
+            .action-container{
+                justify-content: center;
+            }
+            .text-box{
+                width: 90%;
+            }
+        }
+/* Tablet screen */
+            @media screen and (min-width: 501px) and (max-width: 768px){
+            .page-heading{
+                font-size: 45px;
+            }
+            }
+/* Desktop screen */
+            @media screen and (min-width: 769px) {
+            .page-heading{
+                font-size: 55px;}
+            }
+    </style>
+</head>
+<body>
+    <h1 class="text-center page-heading">Operations on Text</h1>
+    <input class="text-box" type="text" id="input" placeholder="Enter Text to Perform Operation... ">
+    <input class="text-box" type="text" id="output" placeholder="Output Will Be Displayed Here... ">
+    <div class="action-container">
+        <button type="button" class="btn-action" onclick="upperCase()">Upper Case</button>
+        <button type="button" class="btn-action" onclick="lowerCase()">Lower Case</button>
+        <button type="button" class="btn-action" onclick="wordCount()">Word Count</button>
+        <button type="button" class="btn-action" onclick="charCount()">Character Count</button>
+    </div>
+
+    <script>
+         const inputElement = document.getElementById('input')
+         const outputElement = document.getElementById('output')
+
+        function upperCase(){
+            const inputText = inputElement.value;
+            outputElement.value = inputText.toUpperCase();
+        }
+        function lowerCase(){
+            outputElement.value = inputElement.value.toLowerCase();
+        }
+        function wordCount(){
+            const totalWord = inputElement.value.split(" ").length ;
+            outputElement.value = ` Total Word Count :- ${totalWord}`;
+        }
+        function charCount(){
+            outputElement.value = ` Total Character Count :- ${inputElement.value.length}` ;
+        }
+    </script>
+    
+<footer>
+    <p>&copy;2024.   All Rights Reserved.</p>
+</footer>
+</body>
+</html>
